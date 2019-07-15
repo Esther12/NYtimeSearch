@@ -2,9 +2,10 @@ var apiKey = "PipsOGUzO5gh4GVMKIuvbFdYnvpY9pNS";
 var filter = "";
 //var articalURL = "https://api.nytimes.com/svc/search/v2//articlesearch.json?q=titanic&fq=" + filter +"&api-key=" + apiKey;
 var queryURL = "";
-
-    startYear = $("#startYear").val();
-    endYear = $("#endYear").val();
+$("#submitForm").on("click",function(){
+    debugger;
+    var startYear = $("#startYear").val();
+    var endYear = $("#endYear").val();
     for(let i = (startYear*1); i < (endYear *1); i++){
         filter += `"` + i + `"`+ "%20";
     }
@@ -19,4 +20,6 @@ $.ajax({
 }).then(function(response){
 
         console.log(response);
+})
+
 })
